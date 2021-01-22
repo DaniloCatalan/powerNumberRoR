@@ -1,0 +1,15 @@
+<div class="text-center mt-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>id Juego</th>
+                <th>Tu Selección</th>
+                <th>Tu Oponente</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%= render @user.scores.reverse_each.take(5) %>
+        </tbody>
+    </table>
+</div>

@@ -6,10 +6,28 @@ class ScoresController < ApplicationController
     end
 
     def index
-        @score = Score.all
+        @user = User.find(current_user.id)
     end
     def create
-        @score = current_user.scores.create(user_value: params[:score][:user_value],machine_value: params[:score][:machine_value])
+        status_fin = 0
+        add_user = params[:score][:user_value]
+        machine = rand(1..10).to_i
+        if machine.even?
+            if add_user.to_i>machine
+                status_fin=1
+            else
+                status_fin=0
+            end
+        else
+            if add_user.to_i<machine
+                status_fin=1
+            else
+                status_fin=0
+            end
+        end
+        # machine = params[:score][:machine_value]
+        @score = current_user.scores.create(user_value: params[:score][:user_value],
+            machine_value: machine,status: status_fin)
         redirect_to @score
     end
     def new

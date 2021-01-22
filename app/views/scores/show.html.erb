@@ -1,7 +1,14 @@
-<h1>Resultado juego</h1>
-<div>
-    Tu selección <%= @score.user_value %>
-</div>
-<div>
-    Tu oponente<%= @score.machine_value %>
+<div class="text-center mt-5">
+    <h1>Resultado juego</h1>
+    <div>
+        Tu selección: <%= @score.user_value %>
+    </div>
+    <div>
+        Tu oponente:<%= @score.machine_value %>
+    </div>
+    <% if @score.status==1 %>
+        <strong>¡Ganaste esta ronda!</strong>
+    <% else %>
+        <strong>Más suerte para la proxima..</strong>
+    <% end %>
 </div>

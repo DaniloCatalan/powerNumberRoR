@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  get "scores/user/:user_id", to: "scores#from_user"
   get "scores", to: "scores#index"
   get "scores/new", to: "scores#new", as: :new_scores
   get "scores/:id", to: "scores#show"
@@ -13,5 +12,5 @@ Rails.application.routes.draw do
 
   patch "scores/:id", to: "scores#update", as: :score
   post "scores", to: "scores#create"
-  delete "scores/:id", to: "scores#destroy"
+  # delete "scores/:id", to: "scores#destroy"
 end
