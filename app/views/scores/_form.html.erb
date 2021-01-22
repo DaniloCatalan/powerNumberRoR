@@ -1,0 +1,13 @@
+<%= form_with(model: @score,local: true) do |form| %>
+    <div class="">
+        <%=form.label :user_value%>
+        <%=form.text_field :user_value%>
+    </div>
+    <div class="">
+        <%=form.label :machine_value%>
+        <%=form.text_field :machine_value%>
+    </div>
+    <div>
+        <%=form.submit%>
+    </div>
+<%end%>
