@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get "bienvenida", to: "home#index"
 
   root to: "home#index"
 
+  get "scores/user/:user_id", to: "scores#from_user"
   get "scores", to: "scores#index"
   get "scores/new", to: "scores#new", as: :new_scores
   get "scores/:id", to: "scores#show"
