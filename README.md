@@ -1,6 +1,6 @@
-#Prueba lógica para Charly.io
+# Prueba lógica para Charly.io
 
-##Acerca del contenido
+## Acerca del contenido
 Desarrollado con RoR
 
 **Desarrollado por Danilo Perez**
